@@ -36,6 +36,78 @@
       "retrieved_at": "2026-09-19",
       "data_type": "map tiles and geographic reference",
       "license_or_usage_note": "OpenStreetMap data © OpenStreetMap contributors; map attribution is displayed in the Leaflet map. Demo coordinates must be replaced by verified facility coordinates before production."
+    },
+    {
+      "source_name": "Pexels — Gustavo Fring",
+      "source_url": "https://www.pexels.com/photo/crop-doctor-in-medical-uniform-with-stethoscope-standing-in-clinic-corridor-4173251/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-01.jpg",
+      "width": 700,
+      "height": 467,
+      "alt_text": "Illustrative clinician wearing a stethoscope in a clinical corridor",
+      "category": "doctor"
+    },
+    {
+      "source_name": "Pexels — RDNE Stock project",
+      "source_url": "https://www.pexels.com/photo/portrait-of-a-doctor-6129500/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-02.jpg",
+      "width": 700,
+      "height": 1050,
+      "alt_text": "Illustrative male clinician in a white coat",
+      "category": "doctor"
+    },
+    {
+      "source_name": "Pexels — Los Muertos Crew",
+      "source_url": "https://www.pexels.com/photo/a-doctor-wearing-a-white-coat-8460090/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-03.jpg",
+      "width": 700,
+      "height": 1050,
+      "alt_text": "Illustrative senior male clinician in a white coat",
+      "category": "doctor"
+    },
+    {
+      "source_name": "Pexels — Thirdman",
+      "source_url": "https://www.pexels.com/photo/healthcare-professional-in-white-uniform-with-stethoscope-hanging-on-her-neck-holding-a-book-while-looking-at-the-camera-5327580/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-04.jpg",
+      "width": 700,
+      "height": 1050,
+      "alt_text": "Illustrative female healthcare professional holding a book",
+      "category": "doctor"
+    },
+    {
+      "source_name": "Pexels — Antoni Shkraba",
+      "source_url": "https://www.pexels.com/photo/a-woman-wearing-a-stethoscope-6749773/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-05.jpg",
+      "width": 700,
+      "height": 1050,
+      "alt_text": "Illustrative female clinician wearing a stethoscope",
+      "category": "doctor"
+    },
+    {
+      "source_name": "Pexels — Tran Nhu Tuan",
+      "source_url": "https://www.pexels.com/photo/portrait-of-a-doctor-in-a-medical-apron-14438788/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "doctor portrait",
+      "license_or_usage_note": "Pexels License. Licensed illustrative portrait; the depicted person is not the fictional clinician named in demo data.",
+      "local_path": "/images/doctor-06.jpg",
+      "width": 700,
+      "height": 1050,
+      "alt_text": "Illustrative male clinician in a medical apron",
+      "category": "doctor"
     }
   ]
 }

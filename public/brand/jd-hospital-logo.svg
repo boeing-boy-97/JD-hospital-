@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="76" viewBox="0 0 320 76" role="img" aria-labelledby="title desc">
+  <title id="title">JD Hospital</title><desc id="desc">JD monogram beside the JD Hospital wordmark</desc>
+  <rect width="72" height="72" y="2" rx="18" fill="#073b66"/>
+  <path d="M55 2h-9c14 7 21 18 26 31V20A18 18 0 0 0 55 2Z" fill="#18a08c"/>
+  <path d="M19 19h13v26c0 8-5 13-13 13-4 0-7-1-10-3l5-10c1 1 3 2 5 2 2 0 3-2 3-4V29H19V19Z" fill="#fff"/>
+  <path d="M39 19h8c12 0 19 7 19 19s-7 20-19 20h-8V47h8c5 0 8-3 8-9 0-5-3-8-8-8h-8V19Z" fill="#fff"/>
+  <text x="90" y="34" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" fill="#073b66" letter-spacing="-.5">JD HOSPITAL</text>
+  <text x="91" y="55" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#397284" letter-spacing="2.25">EXPERT CARE · HUMAN COMPASSION</text>
+</svg>

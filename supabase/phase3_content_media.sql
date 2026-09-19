@@ -97,13 +97,25 @@ create policy "admin manages package requests" on package_requests for all using
 insert into content_sources(source_name,source_url,retrieved_at,data_type,license_or_usage_note) values
 ('Pexels — RDNE Stock project','https://www.pexels.com/photo/doctor-talking-to-a-patient-sitting-on-bed-6129040/','2026-09-19','hero image','Pexels License; illustrative editorial healthcare photography; no endorsement implied.'),
 ('Pexels — EVG Kowalievska','https://www.pexels.com/photo/three-person-looking-at-x-ray-result-1170979/','2026-09-19','clinical team image','Pexels License; illustrative editorial healthcare photography; no endorsement implied.'),
-('Pexels — Mitchell Luo','https://www.pexels.com/photo/close-up-of-a-modern-building-facade-5898345/','2026-09-19','architecture image','Pexels License; illustrative architecture, not a JD Hospital location.')
+('Pexels — Mitchell Luo','https://www.pexels.com/photo/close-up-of-a-modern-building-facade-5898345/','2026-09-19','architecture image','Pexels License; illustrative architecture, not a JD Hospital location.'),
+('Pexels — Gustavo Fring','https://www.pexels.com/photo/crop-doctor-in-medical-uniform-with-stethoscope-standing-in-clinic-corridor-4173251/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.'),
+('Pexels — RDNE Stock project','https://www.pexels.com/photo/portrait-of-a-doctor-6129500/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.'),
+('Pexels — Los Muertos Crew','https://www.pexels.com/photo/a-doctor-wearing-a-white-coat-8460090/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.'),
+('Pexels — Thirdman','https://www.pexels.com/photo/healthcare-professional-in-white-uniform-with-stethoscope-hanging-on-her-neck-holding-a-book-while-looking-at-the-camera-5327580/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.'),
+('Pexels — Antoni Shkraba','https://www.pexels.com/photo/a-woman-wearing-a-stethoscope-6749773/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.'),
+('Pexels — Tran Nhu Tuan','https://www.pexels.com/photo/portrait-of-a-doctor-in-a-medical-apron-14438788/','2026-09-19','doctor portrait','Pexels License; illustrative model, not the fictional demo clinician.')
 on conflict(source_url,data_type) do nothing;
 
 insert into media_assets(title,url,alt_text,source_url,source_name,license,photographer,category,width,height,focal_x,focal_y,status) values
 ('Doctor and patient consultation','/images/hero-consultation.jpg','Doctor consulting with a patient in a modern hospital room','https://www.pexels.com/photo/doctor-talking-to-a-patient-sitting-on-bed-6129040/','Pexels','Pexels License','RDNE Stock project','hero',1800,1200,55,45,'published'),
 ('Clinical team reviewing imaging','/images/clinical-team.jpg','Clinical team reviewing diagnostic imaging together','https://www.pexels.com/photo/three-person-looking-at-x-ray-result-1170979/','Pexels','Pexels License','EVG Kowalievska','technology',1600,1067,50,50,'published'),
-('Modern building facade','/images/hospital-building.jpg','Illustrative modern healthcare building facade','https://www.pexels.com/photo/close-up-of-a-modern-building-facade-5898345/','Pexels','Pexels License','Mitchell Luo','hospital',1600,1067,50,50,'published')
+('Modern building facade','/images/hospital-building.jpg','Illustrative modern healthcare building facade','https://www.pexels.com/photo/close-up-of-a-modern-building-facade-5898345/','Pexels','Pexels License','Mitchell Luo','hospital',1600,1067,50,50,'published'),
+('Illustrative clinician portrait 01','/images/doctor-01.jpg','Illustrative clinician wearing a stethoscope in a clinical corridor','https://www.pexels.com/photo/crop-doctor-in-medical-uniform-with-stethoscope-standing-in-clinic-corridor-4173251/','Pexels','Pexels License','Gustavo Fring','doctor',700,467,50,24,'published'),
+('Illustrative clinician portrait 02','/images/doctor-02.jpg','Illustrative male clinician in a white coat','https://www.pexels.com/photo/portrait-of-a-doctor-6129500/','Pexels','Pexels License','RDNE Stock project','doctor',700,1050,50,24,'published'),
+('Illustrative clinician portrait 03','/images/doctor-03.jpg','Illustrative senior male clinician in a white coat','https://www.pexels.com/photo/a-doctor-wearing-a-white-coat-8460090/','Pexels','Pexels License','Los Muertos Crew','doctor',700,1050,50,24,'published'),
+('Illustrative clinician portrait 04','/images/doctor-04.jpg','Illustrative female healthcare professional holding a book','https://www.pexels.com/photo/healthcare-professional-in-white-uniform-with-stethoscope-hanging-on-her-neck-holding-a-book-while-looking-at-the-camera-5327580/','Pexels','Pexels License','Thirdman','doctor',700,1050,50,24,'published'),
+('Illustrative clinician portrait 05','/images/doctor-05.jpg','Illustrative female clinician wearing a stethoscope','https://www.pexels.com/photo/a-woman-wearing-a-stethoscope-6749773/','Pexels','Pexels License','Antoni Shkraba','doctor',700,1050,50,24,'published'),
+('Illustrative clinician portrait 06','/images/doctor-06.jpg','Illustrative male clinician in a medical apron','https://www.pexels.com/photo/portrait-of-a-doctor-in-a-medical-apron-14438788/','Pexels','Pexels License','Tran Nhu Tuan','doctor',700,1050,50,24,'published')
 on conflict do nothing;
 
 create sequence if not exists package_request_number_seq start 1;

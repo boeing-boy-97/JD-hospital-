@@ -5,7 +5,8 @@ export type Doctor={id:string;slug:string;name:string;designation:string;qualifi
 export type Hospital={id:string;slug:string;name:string;city:string;address:string;phone:string;emergency:string;specialties:string[];beds?:string;image_url?:string|null;latitude?:number|null;longitude?:number|null;overview?:string|null};
 export type Specialty={id:string;slug:string;name:string;icon:string;desc:string};
 export type HealthPackage={id:string;slug:string;name:string;hospital:string;hospital_id?:string;category:string;price:number;tests:number;duration:string;description?:string;test_names?:string[];eligibility?:string;preparation?:string};
-const dd:Doctor[]=demoDoctors.map((d,i)=>({...d,id:`demo-doctor-${i+1}`,qualification:d.qualification}));
+const demoPortraits=['/images/doctor-01.jpg','/images/doctor-02.jpg','/images/doctor-03.jpg','/images/doctor-04.jpg','/images/doctor-05.jpg','/images/doctor-06.jpg'];
+const dd:Doctor[]=demoDoctors.map((d,i)=>({...d,id:`demo-doctor-${i+1}`,qualification:d.qualification,image_url:demoPortraits[i%demoPortraits.length]}));
 const dh:Hospital[]=demoHospitals.map((h,i)=>({...h,id:`demo-hospital-${i+1}`,latitude:[21.1458,18.5204,19.076][i],longitude:[79.0882,73.8567,72.8777][i]}));
 const ds:Specialty[]=demoSpecialties.map((s,i)=>({...s,id:`demo-specialty-${i+1}`}));
 const dp:HealthPackage[]=demoPackages.map((p,i)=>({...p,id:`demo-package-${i+1}`,hospital_id:dh.find(h=>h.name===p.hospital)?.id||dh[0]?.id,test_names:['Complete blood count','Blood glucose profile','Lipid profile','Liver function markers','Kidney function markers','Physician consultation'],eligibility:'Adults seeking a clinician-guided preventive health review. Final eligibility is confirmed by the hospital.',preparation:'Fasting may be required for selected tests. The hospital will provide instructions after confirming the request.'}));
