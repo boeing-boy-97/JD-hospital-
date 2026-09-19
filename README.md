@@ -16,6 +16,7 @@ An original, production-oriented Next.js 16 + Supabase hospital platform. All sa
 4. In Supabase SQL Editor run, in order:
    - `supabase/schema.sql`
    - `supabase/phase2_hardening.sql`
+   - `supabase/phase3_content_media.sql`
    - `supabase/seed.sql`
 5. Add the project URL, anon key and server-only service role key to `.env.local`.
 6. `npm run dev`
@@ -45,6 +46,22 @@ Admin appointment reads and status updates use the signed-in Supabase session an
 
 ## Storage and uploads
 Resumes accept PDF or DOCX files up to 5 MB. Production deployments should additionally configure Supabase bucket-level MIME and object-size restrictions in the dashboard.
+
+## Quality checks
+- `npm run lint`
+- `npm run typecheck`
+- `npm run build`
+- Start the app, then run `npm run smoke`
+- `npm run check` runs lint, typecheck and the production build.
+
+Licensed image and public-reference provenance is recorded in `data/source-manifest.json` and seeded into `content_sources` / `media_assets` by the Phase 3 migration.
+
+## Vercel deployment
+1. Import the GitHub repository into Vercel.
+2. Add all variables from `.env.example` to the Vercel project.
+3. Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS domain.
+4. Run all three schema/migration files and the seed in Supabase before the first production request.
+5. Deploy using the default Next.js preset; no custom build command is required.
 
 ## Production checklist
 - Replace demo records only after clinical credential verification.

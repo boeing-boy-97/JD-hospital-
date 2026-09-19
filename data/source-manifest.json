@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-09-19T11:30:00+05:30",
+  "policy": "Production clinical and organizational records require written authorization from the operating hospital. Public sources listed here supply licensed editorial imagery or general reference information only; they are not evidence for clinical claims.",
+  "sources": [
+    {
+      "source_name": "Pexels — RDNE Stock project",
+      "source_url": "https://www.pexels.com/photo/doctor-talking-to-a-patient-sitting-on-bed-6129040/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "hero image",
+      "license_or_usage_note": "Pexels License; free use. Do not imply that depicted people endorse JD Hospital. Photographer: RDNE Stock project."
+    },
+    {
+      "source_name": "Pexels — EVG Kowalievska",
+      "source_url": "https://www.pexels.com/photo/three-person-looking-at-x-ray-result-1170979/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "clinical team image",
+      "license_or_usage_note": "Pexels License; free use. Used as illustrative healthcare photography. Photographer: EVG Kowalievska."
+    },
+    {
+      "source_name": "Pexels — Mitchell Luo",
+      "source_url": "https://www.pexels.com/photo/close-up-of-a-modern-building-facade-5898345/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "illustrative hospital architecture image",
+      "license_or_usage_note": "Pexels License; free use. Illustrative architecture only and not a photograph of a JD Hospital location. Photographer: Mitchell Luo."
+    },
+    {
+      "source_name": "Pexels License",
+      "source_url": "https://www.pexels.com/license/",
+      "retrieved_at": "2026-09-19",
+      "data_type": "license terms",
+      "license_or_usage_note": "License page states that Pexels photos and videos are free to use, attribution is not required, and modification is permitted; production legal review remains recommended."
+    },
+    {
+      "source_name": "OpenStreetMap",
+      "source_url": "https://www.openstreetmap.org/copyright",
+      "retrieved_at": "2026-09-19",
+      "data_type": "map tiles and geographic reference",
+      "license_or_usage_note": "OpenStreetMap data © OpenStreetMap contributors; map attribution is displayed in the Leaflet map. Demo coordinates must be replaced by verified facility coordinates before production."
+    }
+  ]
+}

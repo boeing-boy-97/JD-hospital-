@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import './phase2.css';
-import AppChrome from '@/components/AppChrome';
-export const metadata:Metadata={metadataBase:new URL(process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000'),title:{default:'JD Hospital | Expert Care. Human Compassion.',template:'%s | JD Hospital'},description:'A modern multispeciality hospital network focused on expert medicine, advanced technology and compassionate care.',openGraph:{title:'JD Hospital',description:'Expert care. Advanced medicine. Human compassion.',type:'website'},twitter:{card:'summary_large_image'}};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" data-scroll-behavior="smooth"><body><a className="skip-link" href="#main">Skip to main content</a><AppChrome>{children}</AppChrome></body></html>}
+import type {Metadata} from 'next';
+import './globals.css';import './phase2.css';import AppChrome from '@/components/AppChrome';
+const siteUrl=process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000';
+export const metadata:Metadata={metadataBase:new URL(siteUrl),title:{default:'JD Hospital | Expert Care. Human Compassion.',template:'%s | JD Hospital'},description:'A demonstration multispeciality hospital platform focused on expert medicine, connected services and compassionate care.',alternates:{canonical:'/'},robots:{index:true,follow:true},openGraph:{title:'JD Hospital',description:'Expert care. Advanced medicine. Human compassion.',type:'website',url:'/',images:[{url:'/images/hero-consultation.jpg',width:1800,height:1200,alt:'Doctor consulting with a patient'}]},twitter:{card:'summary_large_image',title:'JD Hospital',description:'Expert care. Advanced medicine. Human compassion.',images:['/images/hero-consultation.jpg']}};
+const organization={"@context":"https://schema.org","@type":"MedicalOrganization",name:'JD Hospital',url:siteUrl,description:'Demonstration multispeciality hospital platform. Fictional organization; no accreditations or clinical outcomes claimed.',telephone:'+91-712-400-7000'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en" data-scroll-behavior="smooth"><body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organization)}}/><a className="skip-link" href="#main">Skip to main content</a><AppChrome>{children}</AppChrome></body></html>}

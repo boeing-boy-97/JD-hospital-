@@ -19,7 +19,7 @@ select 'demo-package-'||n,(select id from hospitals order by name limit 1 offset
 insert into article_categories(slug,name) values ('heart-health','Heart Health'),('brain-health','Brain Health'),('preventive-care','Preventive Care');
 insert into articles(slug,title,excerpt,content,author,status,published_at)
 select 'demo-article-'||n,'Demo health article '||n,'Educational demo content.','This is educational placeholder content and not medical advice.','JD Editorial Team','published',now()-(n||' days')::interval from generate_series(1,30)n;
-insert into videos(slug,title,category,youtube_url,status,published_at) select 'demo-video-'||n,'Demo doctor video '||n,'General Health','https://www.youtube.com/embed/dQw4w9WgXcQ','published',now() from generate_series(1,10)n;
+insert into videos(slug,title,category,youtube_url,status,published_at) select 'demo-video-'||n,'Demo doctor video '||n,'General Health','','published',now() from generate_series(1,10)n;
 insert into faqs(question,answer,category,status) select 'Demo frequently asked question '||n||'?','Contact the hospital for information specific to your care.','General','published' from generate_series(1,15)n;
 insert into clinics(city,location,address,contact,weekday,start_time,end_time,status) select (array['Nagpur','Pune','Mumbai'])[1+((n-1)%3)],'Demo Specialty Clinic '||n,'Demo address','+91 712 400 7000',n%6,'09:00','13:00','published' from generate_series(1,10)n;
 
@@ -42,3 +42,13 @@ select d.id,s.id from doctors d cross join lateral (select id from specialties o
 insert into doctor_schedules(doctor_id,hospital_id,weekday,start_time,end_time,consultation_type,slot_minutes)
 select dh.doctor_id,dh.hospital_id,day,'09:00','17:00','In-person',30 from doctor_hospitals dh cross join generate_series(1,6) day
 where not exists(select 1 from doctor_schedules x where x.doctor_id=dh.doctor_id and x.hospital_id=dh.hospital_id and x.weekday=day);
+
+-- Demonstration settings are deliberately unverified and therefore are not shown as public claims.
+insert into site_settings(key,value) values
+('hospitals_count','{"value":10,"verified":false,"demo":true}'::jsonb),
+('specialties_count','{"value":25,"verified":false,"demo":true}'::jsonb),
+('doctors_count','{"value":40,"verified":false,"demo":true}'::jsonb),
+('years_of_service','{"value":0,"verified":false,"demo":true}'::jsonb),
+('content_mode','{"value":"demo","verified":true}'::jsonb)
+on conflict(key) do update set value=excluded.value;
+

@@ -1,0 +1,2 @@
+import {getVideos} from '@/lib/repositories';import VideoCenter from '@/components/VideoCenter';
+export default async function Page(){const videos=await getVideos();return <><section className="page-hero compact"><div className="container"><span className="eyebrow">Video centre</span><h1>Health topics, explained clearly.</h1><p>Browse specialist-led educational videos. Embeds load only when you choose to play them.</p></div></section><section className="section"><div className="container"><VideoCenter videos={videos}/></div></section></>}
