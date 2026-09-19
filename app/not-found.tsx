@@ -1,0 +1,1 @@
+import Link from 'next/link';export default function NotFound(){return <section className="section"><div className="container" style={{textAlign:'center'}}><span className="eyebrow">404</span><h1>We couldn’t find that page.</h1><p>Try searching for a doctor, specialty or hospital.</p><Link className="btn btn-primary" href="/">Return home</Link></div></section>}
