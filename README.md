@@ -56,6 +56,15 @@ Resumes accept PDF or DOCX files up to 5 MB. Production deployments should addit
 
 Licensed image and public-reference provenance is recorded in `data/source-manifest.json` and seeded into `content_sources` / `media_assets` by the Phase 3 migration.
 
+## JD Hospital AI voice calling
+The public site includes an in-page voice-call overlay powered by the official `@elevenlabs/react` SDK. The SDK is lazy-loaded only after the visitor selects **Talk to AI**; no hosted ElevenLabs page or iframe is used.
+
+- Public-agent mode works with `ELEVENLABS_AGENT_ID` and does not require an API key.
+- For production signed sessions, set the server-only `ELEVENLABS_API_KEY`, enable agent authentication in ElevenLabs, and keep `ELEVENLABS_REQUIRE_SIGNED_URL=true`.
+- `ELEVENLABS_BRANCH_ID` is sent only by the server while requesting a short-lived signed URL.
+- Never prefix the API key with `NEXT_PUBLIC_`; the key must not enter the browser bundle.
+- The session endpoint is same-origin protected, rate limited, non-cacheable, and returns only a public agent identifier or short-lived signed URL.
+
 ## Vercel deployment
 1. Import the GitHub repository into Vercel.
 2. Add all variables from `.env.example` to the Vercel project.

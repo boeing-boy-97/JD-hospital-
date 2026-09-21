@@ -4,6 +4,8 @@ let failures=0;
 for(const path of routes){try{const r=await fetch(base+path,{redirect:'follow'});if(!r.ok)throw new Error(`HTTP ${r.status}`);const body=await r.text();if(!body.length)throw new Error('empty response');console.log(`✓ ${r.status} ${path}`)}catch(e){failures++;console.error(`✗ ${path}: ${e.message}`)}}
 const availability=await fetch(`${base}/api/availability?doctor=demo-doctor-1&hospital=demo-hospital-1&date=2027-01-20`);if(!availability.ok){failures++;console.error('✗ availability API')}else console.log('✓ availability API');
 const invalid=await fetch(`${base}/api/appointments`,{method:'POST',headers:{'content-type':'application/json'},body:'{}'});if(invalid.status!==400){failures++;console.error(`✗ appointment validation expected 400, received ${invalid.status}`)}else console.log('✓ appointment server validation');
+const voice=await fetch(`${base}/api/elevenlabs/session`,{method:'POST',headers:{origin:new URL(base).origin}});const voiceBody=await voice.json().catch(()=>({}));if(!voice.ok||!['public','signed'].includes(voiceBody.connection)){failures++;console.error(`✗ secure AI voice session (${voice.status})`)}else console.log('✓ secure AI voice session');
+const crossOriginVoice=await fetch(`${base}/api/elevenlabs/session`,{method:'POST',headers:{origin:'https://untrusted.example'}});if(crossOriginVoice.status!==403){failures++;console.error(`✗ AI voice same-origin protection expected 403, received ${crossOriginVoice.status}`)}else console.log('✓ AI voice same-origin protection');
 if(process.env.SMOKE_MUTATIONS==='true')console.warn('Mutation smoke tests should be run with dedicated test records in a non-production Supabase project.');
 if(failures){console.error(`\n${failures} smoke test(s) failed.`);process.exit(1)}
-console.log(`\nAll ${routes.length+2} smoke checks passed.`);
+console.log(`\nAll ${routes.length+4} smoke checks passed.`);
